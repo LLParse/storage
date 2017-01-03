@@ -21,7 +21,7 @@ fi
 cp ../bin/storage .
 for i in */Dockerfile; do
     BASE=$(dirname $i)
-    IMAGE=${REPO}/storage-${BASE}:${TAG}
+    IMAGE=${REPO}/storage-${BASE}:dev
     docker build -f $i -t ${IMAGE} .
     if [ "$BASE" != "example" ]; then
         echo ${IMAGE} >> ../dist/images
